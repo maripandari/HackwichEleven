@@ -12,6 +12,8 @@ class ViewController: UIViewController {
     var currentValue: Int = 0
     var targetValue: Int = 0
     
+    @IBOutlet weak var targetLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
   
@@ -23,9 +25,9 @@ class ViewController: UIViewController {
         
         let message = "The value is: \(currentValue)" + "\nThe target value is: \(targetValue)"
         
-        let alert = UIAlertController(title: "Hello World", message: message,  preferredStyle:.alert)
+        let alert = UIAlertController(title: "Guess the Number game", message: message,  preferredStyle:.alert)
                                
-        let action = UIAlertAction(title: "Awesome", style: .default, handler: nil)
+        let action = UIAlertAction(title: "New Round", style: .default, handler: nil)
                                
          alert.addAction(action)
                                
@@ -50,7 +52,14 @@ class ViewController: UIViewController {
     {
         targetValue = Int.random(in:0...100)
         currentValue = Int(slider.value)
+        updateTargetLabel()
     }
+        func updateTargetLabel ()
+        {
+            targetLabel.text = "\(targetValue)"
+        }
+        
+    
     
     
     
