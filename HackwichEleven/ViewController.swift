@@ -35,6 +35,9 @@ class ViewController: UIViewController {
         
         startNewRound()
         
+        let thumbImageNormal = UIImage(named: "SliderThumb-Normal")
+        slider.setThumbImage(thumbImageNormal, for: .normal)
+        
     
         
     }
